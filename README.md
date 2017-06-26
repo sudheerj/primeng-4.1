@@ -1,4 +1,4 @@
-## PrimeNG-4.1 Setup project with Angular CLI
+## What's new in PrimeNG-4.1 Release
 
 ### Prerequisites
 
