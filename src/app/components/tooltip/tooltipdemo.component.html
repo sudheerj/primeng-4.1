@@ -1,0 +1,33 @@
+<form novalidate>
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">Tooltip</span>
+      <span>Tooltip provides advisory information for a component.</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Collision detection -->
+
+        <pe-step label="Collision detection">
+          <div class="subcontent-section">
+              <span>Tooltip need to adjust automatically based on viewport size.</span>
+          </div>
+          <input type="text" pTooltip="Enter your username" tooltipPosition="top" tooltipEvent="focus">
+        </pe-step>
+
+      <!-- Delay -->
+
+      <pe-step label="Delay">
+        <div class="subcontent-section">
+          <span>Tooltip is displayed or hidden instantly by default however you may add delays using showDelay and hideDelay properties which accept a number value in terms of milliseconds.</span>
+        </div>
+        <input type="text" pTooltip="Enter your username" tooltipPosition="top" tooltipEvent="focus" showDelay="1000" hideDelay="500">
+      </pe-step>
+
+
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

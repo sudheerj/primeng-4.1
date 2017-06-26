@@ -1,0 +1,54 @@
+<form novalidate>
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">ColorPicker</span>
+      <span>ColorPicker is an input component to select a color.</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic -->
+
+        <pe-step label="Basic" [styleClass]="'colorpicker-height'">
+          <div class="subcontent-section">
+              <span>ColorPicker can be displayed as  an overlay (default) using the "inline" property.</span>
+          </div>
+            <p-colorPicker name="basic" [(ngModel)]="color1"></p-colorPicker>
+        </pe-step>
+
+        <!-- inline -->
+        <pe-step label="inline" >
+          <div class="subcontent-section">
+            <span>ColorPicker can be displayed as inline by setting inline="true" property.</span>
+          </div>
+            <p-colorPicker name="inline" [(ngModel)]="color2" inline="true"></p-colorPicker>
+        </pe-step>
+
+        <!-- Format -->
+        <pe-step label="format" >
+          <div class="subcontent-section">
+            <span>Default color format to use in value binding is "hex" and other possible values are "rgb" and "hsb".</span>
+          </div>
+
+            <p-colorPicker name="hex" [(ngModel)]="colorFormat1" format="hex"></p-colorPicker>
+            <p style="margin-top:.5em">Selected Color: <span [ngStyle]="{'color':'#' + colorFormat1}">{{colorFormat1}}</span></p>
+            <p-colorPicker name="rgb" [(ngModel)]="colorFormat2" format="rgb"></p-colorPicker>
+            <p style="margin-top:.5em">Selected Color: <span [ngStyle]="{'color':'#' + colorFormat2}">{{colorFormat2 | json}}</span></p>
+            <p-colorPicker name="hsb" [(ngModel)]="colorFormat3" format="hsb"></p-colorPicker>
+            <p style="margin-top:.5em">Selected Color: <span [ngStyle]="{'color':'#' + colorFormat3}">{{colorFormat3 | json}}</span></p>
+        </pe-step>
+
+        <!-- events -->
+        <pe-step label="events" [styleClass]="'colorpicker-height'">
+          <div class="subcontent-section">
+            <span>onChange:Callback to invoke when a color is selected (params: event.originalEvent: Browser event,event.value: Selected color)</span>
+          </div>
+            <p-colorPicker name="events" [(ngModel)]="color3" (onChange)="onChangeColor($event)"></p-colorPicker>
+        </pe-step>
+
+
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

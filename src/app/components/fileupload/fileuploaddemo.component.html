@@ -1,0 +1,44 @@
+<form novalidate>
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">FileUpload</span>
+      <span>FileUpload is an advanced uploader with dragdrop support, multi file uploads, auto uploading, progress tracking and validations.</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Basic UI -->
+
+        <pe-step label="Basic UI">
+          <div class="subcontent-section">
+              <span>FileUpload basic mode provides a simpler UI as an alternative to advanced mode.</span>
+          </div>
+          <h3>Basic</h3>
+          <p-fileUpload mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUpload($event)"></p-fileUpload>
+
+          <h3>Basic with Auto</h3>
+          <p-fileUpload #fubauto mode="basic" name="demo[]" url="./upload.php" accept="image/*" maxFileSize="1000000" (onUpload)="onBasicUploadAuto($event)" auto="true" chooseLabel="Browse"></p-fileUpload>
+        </pe-step>
+
+        <!-- Custom Upload Handler -->
+        <pe-step label="Custom Upload Handler" >
+          <div class="subcontent-section">
+            <span>Uploading implementation can be overriden by enabling customMode property and defining a custom upload handler event..</span>
+          </div>
+          <p-fileUpload name="myfile[]" customUpload="true" (uploadHandler)="myUploader($event)"></p-fileUpload>
+        </pe-step>
+
+      <!-- Client-side Upload  -->
+      <pe-step label="Client-side Upload " >
+        <div class="subcontent-section">
+          <span>Both showUploadButton and showCancelButton properties enables client-side upload by disabling them and onSelect callback to implement the logic.</span>
+        </div>
+        <p-fileUpload name="myfile[]" (onSelect)="onSelect($event)" [showUploadButton]="false" [showCancelButton]="false"></p-fileUpload>
+      </pe-step>
+
+
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

@@ -1,0 +1,37 @@
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">Dropdown</span>
+      <span>Dropdown is used to select an item from a collection of options. Custom content support and filtering are the notable features..</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Multi filter -->
+
+        <pe-step label="Multi filter" >
+          <div class="subcontent-section">
+              <span>By default filtering is done against label of the SelectItem and filterBy property is available to choose one or more properties of the SelectItem API.</span>
+          </div>
+          <p-dropdown [options]="cars" [(ngModel)]="selectedCar2" [style]="{'width':'150px'}" filter="filter">
+            <ng-template let-car pTemplate="item">
+              <div class="ui-helper-clearfix" style="position: relative;height: 25px;">
+                <img src="assets/showcase/images/demo/car/{{car.label}}.png" style="width:24px;position:absolute;top:1px;left:5px"/>
+                <div style="font-size:14px;float:right;margin-top:4px">{{car.label}}</div>
+              </div>
+            </ng-template>
+          </p-dropdown>
+        </pe-step>
+
+        <!-- inline -->
+        <pe-step label="inline" >
+          <div class="subcontent-section">
+            <span>Dropdown provides aria-label attribute for accessibility. The selected option will be used for accessibility.</span>
+          </div>
+          <p-dropdown [options]="cars" [(ngModel)]="selectedCar" [style]="{'width':'150px'}"  placeholder="Select a Brand" ></p-dropdown>
+        </pe-step>
+
+
+
+    </pe-steps>
+
+<p-growl [value]="msgs"></p-growl>

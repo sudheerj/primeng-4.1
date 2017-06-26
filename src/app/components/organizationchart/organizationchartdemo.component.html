@@ -1,0 +1,72 @@
+<div class="content-section introduction">
+  <div>
+    <span class="feature-title">OrganizationChart</span>
+    <span>OrganizationChart visualized hierarchical organization data.</span>
+  </div>
+</div>
+<pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+  <!-- Hierarchical data with zero configuration -->
+  <pe-step label="Hierarchical data with zero configuration">
+    <div class="subcontent-section">
+      <span>Hierarchical data with zero configuration.</span>
+    </div>
+    <p-organizationChart [value]="dataBasic"></p-organizationChart>
+  </pe-step>
+
+  <!-- Advanced customization -->
+  <pe-step label="Advanced customization">
+    <div class="subcontent-section">
+      <span>Label of the treenode is displayed inside the node content by default and templating enables enhanced customization.The templating can be achieved based on node type.</span>
+    </div>
+    <p-organizationChart [value]="dataAdvanced" styleClass="company">
+      <ng-template let-node pTemplate="department">
+        <div class="node-header ui-corner-top">
+          {{node.label}}
+        </div>
+        <div class="node-content ui-corner-bottom">
+          <img src="/assets/data/avatar/{{node.data.avatar}}" width="32">
+          <div>{{node.data.name}}</div>
+        </div>
+      </ng-template>
+      <ng-template let-node pTemplate="default">
+        {{node.label}}
+      </ng-template>
+    </p-organizationChart>
+  </pe-step>
+
+  <!-- Selection and events -->
+  <pe-step label="Selection and events">
+    <div class="subcontent-section">
+      <span>onNodeSelect,onNodeUnselect: Callbacks to invoke when a node is selected and unselected(params: event.originalEvent: browser event, event.node: Selected/Unselected node instance.)</span>
+    </div>
+    <p-organizationChart [value]="dataAdvanced" styleClass="company"
+                         selectionMode="single" [(selection)]="selectedNode"
+                         (onNodeSelect)="onNodeSelect($event)">
+      <ng-template let-node pTemplate="department">
+        <div class="node-header ui-corner-top">
+          {{node.label}}
+        </div>
+        <div class="node-content ui-corner-bottom">
+          <img src="/assets/data/avatar/{{node.data.avatar}}" width="32">
+          <div>{{node.data.name}}</div>
+        </div>
+      </ng-template>
+      <ng-template let-node pTemplate="default">
+        {{node.label}}
+      </ng-template>
+    </p-organizationChart>
+  </pe-step>
+</pe-steps>
+
+<p-dialog header="VCard" [(visible)]="display"
+          modal="modal" width="320" [responsive]="true">
+  <i class="fa fa-address-card-o"></i>
+  <ul style="padding: 0.2em 0.8em;">
+    <li>Full name: {{selectedVCard?.fullName}}</li>
+    <li>Birthday: {{selectedVCard?.birthday}}</li>
+    <li>Address: {{selectedVCard?.address}}</li>
+    <li>E-mail: {{selectedVCard?.email}}</li>
+  </ul>
+</p-dialog>
+
+<p-growl [value]="msgs"></p-growl>

@@ -1,0 +1,31 @@
+<form novalidate>
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">Panel</span>
+      <span>Panel is a grouping component providing with content toggle feature.</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Footer -->
+
+        <pe-step label="Footer" >
+          <div class="subcontent-section">
+              <span> The Footer sections can be customized using  p-footer components..</span>
+          </div>
+          <p-panel >
+            <p-header>
+              Header content here
+            </p-header>
+            Header and Footers sections can be customized using p-header and p-footer components.
+            <p-footer>
+              Footer content here
+            </p-footer>
+          </p-panel>
+        </pe-step>
+
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

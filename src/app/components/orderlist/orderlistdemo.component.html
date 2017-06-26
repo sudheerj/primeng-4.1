@@ -1,0 +1,50 @@
+<form novalidate>
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">OrderList</span>
+      <span>OrderList is used to sort a collection. When the position of an item changes, the backend array is updated as well.</span>
+    </div>
+  </div>
+  <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event);">
+    <!-- Filter -->
+    <pe-step label="Filters">
+      <div class="subcontent-section">
+        <span>Options can be filtered using an input field in the overlay by enabling the filterBy property. filterBy property decides which field to search(Accepts multiple fields with a comma)..</span>
+      </div>
+      <p-orderList [value]="cars" header="List of cars"
+                  dragdrop="true"
+                  [responsive]="true" filterBy="brand"
+                   filterPlaceHolder="Search by brand">
+        <ng-template let-car pTemplate="item">
+          <div class="ui-helper-clearfix">
+            <img src="assets/showcase/images/demo/car/{{car.brand}}.png"
+                 style="display:inline-block;margin:2px 0 2px 2px"
+                 width="48">
+            <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{car.brand}} - {{car.year}} - {{car.color}}
+            </div>
+          </div>
+        </ng-template>
+      </p-orderList>
+    </pe-step>
+
+    <!-- Drag&Drop -->
+    <pe-step label="Drag&Drop">
+      <div class="subcontent-section">
+        <span>Items can be reordered using drag and drop by enabling dragdrop property along with dragdropScope to avoid conflict with other drag drop events on view.</span>
+      </div>
+      <p-orderList [value]="cars"  header="List of cars"
+                  [responsive]="true"
+                  [dragdrop]="true" dragdropScope="name">
+        <ng-template let-car pTemplate="item">
+          <div class="ui-helper-clearfix">
+            <img src="/assets/showcase/images/demo/car/{{car.brand}}.png"
+                 style="display:inline-block;margin:2px 0 2px 2px"
+                 width="48"/>
+            <span
+              style="font-size:14px;float:right;margin:15px 5px 0 0">{{car.brand}} - {{car.year}} - {{car.color}}</span>
+          </div>
+        </ng-template>
+      </p-orderList>
+    </pe-step>
+
+  </pe-steps>
