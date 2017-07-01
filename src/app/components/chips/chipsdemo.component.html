@@ -1,0 +1,29 @@
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">Chips</span>
+      <span>Chips is used to enter multiple values on an inputfield..</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Custom styles -->
+
+        <pe-step label="Custom styles" [styleClass]="'colorpicker-height'">
+          <div class="subcontent-section">
+            <span>inputStyle: Inline style of the input field.</span>
+            <span>inputStyleClass: Style class of the input field.</span>
+          </div>
+          <p-chips [(ngModel)]="values" [inputStyle]="{'width':'100%','color':'blue'}"></p-chips>
+        </pe-step>
+
+      <pe-step label="Duplicates" [styleClass]="'colorpicker-height'">
+        <div class="subcontent-section">
+          <span>allowDuplicate: Whether to allow duplicate values or not.</span>
+        </div>
+        <p-chips [(ngModel)]="values" [allowDuplicate]="false" [inputStyle]="{'width':'100%','color':'blue'}"></p-chips>
+      </pe-step>
+
+
+    </pe-steps>
+
+<p-growl [value]="msgs"></p-growl>

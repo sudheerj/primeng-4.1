@@ -4,40 +4,18 @@ import {MenuItem} from 'primeng/components/common/api';
 
 @Component({
   selector: 'section',
-  templateUrl: 'panelmenudemo.component.html',
+  templateUrl: 'tieredmenudemo.component.html',
 })
-export class PanelMenuDemoComponent {
+export class TieredMenuDemoComponent {
   msgs: Message[] = [];
 
   activeIndex: number = 0;
 
   items: MenuItem[];
 
-  itemsSeparator: MenuItem[];
 
   ngOnInit() {
 
-    this.itemsSeparator = [
-      {
-        label: 'File',
-        icon: 'fa-file-o',
-        separator: true,
-        command: () => {
-          console.log('The file is opened');
-        },
-        items: [{
-          label: 'New',
-          icon: 'fa-plus',
-          separator: true,
-          items: [
-            {label: 'Project', separator: true},
-            {label: 'Other', separator: true},
-          ]
-        },
-          {label: 'Open', separator: true},
-          {label: 'Quit', separator: true}
-        ]
-      }];
     this.items = [
       {
         label: 'File',
@@ -111,7 +89,6 @@ export class PanelMenuDemoComponent {
       }
     ];
   }
-
 
   onChangeStep(label: string) {
     this.msgs.length = 0;

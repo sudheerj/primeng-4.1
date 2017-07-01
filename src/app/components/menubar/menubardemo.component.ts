@@ -1,12 +1,12 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Message} from 'primeng/components/common/api';
 import {MenuItem} from 'primeng/components/common/api';
 
 @Component({
   selector: 'section',
-  templateUrl: 'panelmenudemo.component.html',
+  templateUrl: 'menubardemo.component.html',
 })
-export class PanelMenuDemoComponent {
+export class MenubarDemoComponent implements OnInit {
   msgs: Message[] = [];
 
   activeIndex: number = 0;
@@ -22,9 +22,6 @@ export class PanelMenuDemoComponent {
         label: 'File',
         icon: 'fa-file-o',
         separator: true,
-        command: () => {
-          console.log('The file is opened');
-        },
         items: [{
           label: 'New',
           icon: 'fa-plus',

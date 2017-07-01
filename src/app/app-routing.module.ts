@@ -16,7 +16,17 @@ import {NgModule} from '@angular/core';
       {path: 'panelmenu', loadChildren: './components/panelmenu/panelmenudemo.module#PanelMenuDemoModule'},
       {path: 'fileupload', loadChildren: './components/fileupload/fileuploaddemo.module#FileuploadDemoModule'},
       {path: 'textarea', loadChildren: './components/textarea/textareademo.module#InputTextareaDemoModule'},
-
+      {path: 'accordion', loadChildren: './components/accordion/accordiondemo.module#AccordionDemoModule'},
+      {path: 'calendar', loadChildren: './components/calendar/calendardemo.module#CalendarDemoModule'},
+      {path: 'treetable', loadChildren: './components/treetable/treetabledemo.module#TreeTableDemoModule'},
+      {path: 'growl', loadChildren: './components/growl/growldemo.module#GrowlDemoModule'},
+      {path: 'gmap', loadChildren: './components/gmap/gmapdemo.module#GmapDemoModule'},
+      {path: 'chips', loadChildren: './components/chips/chipsdemo.module#ChipsDemoModule'},
+      {path: 'tieredmenu', loadChildren: './components/tieredmenu/tieredmenudemo.module#TieredMenuDemoModule'},
+      {path: 'menubar', loadChildren: './components/menubar/menubardemo.module#MenubarDemoModule'},
+      {path: 'megamenu', loadChildren: './components/megamenu/megamenudemo.module#MegaMenuDemoModule'},
+      {path: 'spinner', loadChildren: './components/spinner/spinnerdemo.module#SpinnerDemoModule'},
+      {path: 'datatable', loadChildren: './components/datatable/datatabledemo.module#DataTableDemoModule'},
     ])
   ],
   exports: [RouterModule]

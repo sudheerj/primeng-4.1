@@ -1,0 +1,27 @@
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">Gmap</span>
+      <span>GMap component provides integration with Google Maps API. This sample demontrates various uses cases like binding, overlays and events. Click the map to add a new item..</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- onMapDragEnd,onZoomChanged -->
+
+        <pe-step label="events" [styleClass]="'gmap-height'">
+          <div class="subcontent-section">
+              <span>1. onMapDragEnd(originalEvent: Google Maps dragend)Callback to invoke when map drag (i.e. pan) has ended
+                    2. onZoomChanged	originalEvent: Google Maps zoom_changed	Callback to invoke when zoom level has changed.
+              </span>
+          </div>
+          <p-gmap #gmap [style]="{'width':'100%','height':'320px'}" [options]="options"
+                  (onZoomChanged)="handleZoomChanged($event)" (onMapDragEnd)="handleDragEnd($event)"></p-gmap>
+        </pe-step>
+
+        <!-- inline -->
+
+
+    </pe-steps>
+
+  <p-growl [value]="msgs"></p-growl>
+

@@ -1,0 +1,30 @@
+<form novalidate>
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">TreeTable</span>
+      <span>TreeTable is used to display hierarchical data in tabular format.</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- onRowDblclick -->
+
+        <pe-step label="onRowDblclick">
+          <div class="subcontent-section">
+              <span>onRowDblclick:Callback to invoke when a row is double clicked(params: event.originalEvent: Browser event,event.node: Selected node instance).</span>
+          </div>
+          <p-treeTable [value]="files" selectionMode="single" [(selection)]="selectedFile"
+                       (onRowDblclick)="onRowDblclick($event)" [style]="{'margin-top':'50px'}">
+            <p-header>Single Selection</p-header>
+            <p-column field="name" header="Name"></p-column>
+            <p-column field="size" header="Size"></p-column>
+            <p-column field="type" header="Type"></p-column>
+          </p-treeTable>
+        </pe-step>
+
+
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

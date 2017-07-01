@@ -1,0 +1,21 @@
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">Calendar</span>
+      <span>Calendar is an input component to select a date.</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- onClose -->
+
+        <pe-step label="onClose">
+          <div class="subcontent-section">
+              <span>onClose:Callback to invoke when datepicker panel is closed (param: event object).</span>
+          </div>
+          <p-calendar [(ngModel)]="date1" (onClose)="onClose($event)"></p-calendar>
+        </pe-step>
+
+
+    </pe-steps>
+
+<p-growl [value]="msgs"></p-growl>

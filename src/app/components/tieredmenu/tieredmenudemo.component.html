@@ -1,0 +1,25 @@
+<form novalidate>
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">PanelMenu</span>
+      <span>PanelMenu is a hybrid of accordion-tree components..</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- AppendTo -->
+
+        <pe-step label="MenuModel Separator" >
+          <div class="subcontent-section">
+              <span>The MenuModel provides separator between items. Applicable for all menus.</span>
+          </div>
+          <p-tieredMenu  [model]="items" [appendTo]="btn"></p-tieredMenu>
+          <button #btn type="button" pButton icon="fa fa-list" label="Show" ></button>
+        </pe-step>
+
+
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

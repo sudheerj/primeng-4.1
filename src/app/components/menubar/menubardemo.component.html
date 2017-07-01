@@ -1,0 +1,27 @@
+<form novalidate>
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">Menubar</span>
+      <span>Menubar is an horizontal menu components with support for nested submenus.</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Customized menubar-->
+
+        <pe-step label="Customized menubar" >
+          <div class="subcontent-section">
+              <span>Custom content can be placed between p-menubar tags.</span>
+          </div>
+          <p-menubar [model]="items">
+            <input type="text" pInputText placeholder="Search">
+            <button pButton label="Logout" icon="fa-sign-out"></button>
+          </p-menubar>
+        </pe-step>
+
+
+    </pe-steps>
+
+</form>
+
+<p-growl [value]="msgs"></p-growl>

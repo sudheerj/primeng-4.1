@@ -29,7 +29,18 @@ export class AppComponent implements OnInit{
           {label: 'Tooltip', icon: 'fa-refresh', routerLink: ['/tooltip']},
           {label: 'Panel', icon: 'fa-refresh', routerLink: ['/panel']},
           {label: 'Fileupload', icon: 'fa-refresh', routerLink: ['/fileupload']},
-          {label: 'TextArea', icon: 'fa-refresh', routerLink: ['/textarea']}
+          {label: 'TextArea', icon: 'fa-refresh', routerLink: ['/textarea']},
+          {label: 'Accordion', icon: 'fa-refresh', routerLink: ['/accordion']},
+          {label: 'Calendar', icon: 'fa-refresh', routerLink: ['/calendar']},
+          {label: 'TreeTable', icon: 'fa-refresh', routerLink: ['/treetable']},
+          {label: 'Growl', icon: 'fa-refresh', routerLink: ['/growl']},
+          {label: 'Gmap', icon: 'fa-refresh', routerLink: ['/gmap']},
+          {label: 'Chips', icon: 'fa-refresh', routerLink: ['/chips']},
+          {label: 'TieredMenu', icon: 'fa-refresh', routerLink: ['/tieredmenu']},
+          {label: 'MenuBar', icon: 'fa-refresh', routerLink: ['/menubar']},
+          {label: 'MegaMenu', icon: 'fa-refresh', routerLink: ['/megamenu']},
+          {label: 'Spinner', icon: 'fa-refresh', routerLink: ['/spinner']},
+          {label: 'DataTable', icon: 'fa-refresh', routerLink: ['/datatable']}
         ]
       },
       {
