@@ -46,7 +46,8 @@ export class AppComponent implements OnInit{
       {
         label: 'Defect fixes',
         items: [
-          {label: 'ShowList', icon: 'fa-refresh', url: "https://github.com/primefaces/primeng/releases/tag/4.1.0-rc.1"}
+          {label: 'RC1', icon: 'fa-refresh', url: "https://github.com/primefaces/primeng/releases/tag/4.1.0-rc.1"},
+          {label: 'RC3', icon: 'fa-refresh', url: "https://www.primefaces.org/primeng-4-1-0-rc3-released/"}
         ]
       },
       {
