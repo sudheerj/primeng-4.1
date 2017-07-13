@@ -27,6 +27,7 @@ import {NgModule} from '@angular/core';
       {path: 'megamenu', loadChildren: './components/megamenu/megamenudemo.module#MegaMenuDemoModule'},
       {path: 'spinner', loadChildren: './components/spinner/spinnerdemo.module#SpinnerDemoModule'},
       {path: 'datatable', loadChildren: './components/datatable/datatabledemo.module#DataTableDemoModule'},
+      {path: 'inputmask', loadChildren: './components/inputmask/inputmaskdemo.module#InputMaskDemoModule'},
     ])
   ],
   exports: [RouterModule]

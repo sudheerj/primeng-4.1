@@ -1,0 +1,20 @@
+  <div class="content-section introduction">
+    <div>
+      <span class="feature-title">InputMask</span>
+      <span>InputMask component is used to enter input in a certain format such as numeric, date, currency, email and phone..</span>
+    </div>
+  </div>
+
+    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+        <!-- Events -->
+
+        <pe-step label="Events" >
+          <div class="subcontent-section">
+              <span>onFocus:Callback to invoke when input receives focus..</span>
+          </div>
+          <p-inputMask [(ngModel)]="val" mask="99-9999" (onFocus)="onFocusinput($event)"></p-inputMask>
+        </pe-step>
+
+    </pe-steps>
+
+<p-growl [value]="msgs"></p-growl>

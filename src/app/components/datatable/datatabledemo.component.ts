@@ -18,6 +18,8 @@ export class DataTableDemoComponent implements OnInit {
 
   selectedCar: Car;
 
+  selectedCars: Car[];
+
   newCar: boolean;
 
   cars: Car[];

@@ -1,57 +1,84 @@
-  <div class="content-section introduction">
-    <div>
-      <span class="feature-title">DataTable</span>
-      <span>DataTable displays data in tabular format..</span>
-    </div>
+<div class="content-section introduction">
+  <div>
+    <span class="feature-title">DataTable</span>
+    <span>DataTable displays data in tabular format..</span>
   </div>
+</div>
 
-    <pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
-        <!-- immutable -->
+<pe-steps [(activeIndex)]="activeIndex" (change)="onChangeStep($event)">
+  <!-- immutable -->
 
-        <pe-step label="immutable">
-          <div class="subcontent-section">
-              <span>Immutable:Defines how the data should be manipulated(default is true).</span>
-            DataTable either uses setter based checking or ngDoCheck to realize if the underlying data has changed to update the UI. This is configured using the immutable property, when enabled (default) setter based detection is utilized so your data changes such as adding or removing a record should always create a new array reference instead of manipulating an existing array as Angular does not trigger setters if the reference does not change
-          </div>
-          <p-dataTable [value]="cars" [immutable]="false" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
-            <p-header>CRUD for Cars</p-header>
-            <p-column field="vin" header="Vin" [sortable]="true"></p-column>
-            <p-column field="year" header="Year" [sortable]="true"></p-column>
-            <p-column field="brand" header="Brand" [sortable]="true"></p-column>
-            <p-column field="color" header="Color" [sortable]="true"></p-column>
-            <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></p-footer>
-          </p-dataTable>
+  <pe-step label="immutable">
+    <div class="subcontent-section">
+      <span>Immutable:Defines how the data should be manipulated(default is true).</span>
+      DataTable either uses setter based checking or ngDoCheck to realize if the underlying data has changed to update
+      the UI. This is configured using the immutable property, when enabled (default) setter based detection is utilized
+      so your data changes such as adding or removing a record should always create a new array reference instead of
+      manipulating an existing array as Angular does not trigger setters if the reference does not change
+    </div>
+    <p-dataTable [value]="cars" [immutable]="false" selectionMode="single" [(selection)]="selectedCar"
+                 (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
+      <p-header>CRUD for Cars</p-header>
+      <p-column field="vin" header="Vin" [sortable]="true"></p-column>
+      <p-column field="year" header="Year" [sortable]="true"></p-column>
+      <p-column field="brand" header="Brand" [sortable]="true"></p-column>
+      <p-column field="color" header="Color" [sortable]="true"></p-column>
+      <p-footer>
+        <div class="ui-helper-clearfix" style="width:100%">
+          <button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()"
+                  label="Add"></button>
+        </div>
+      </p-footer>
+    </p-dataTable>
 
-          <p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
-            <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="car">
-              <div class="ui-grid-row">
-                <div class="ui-grid-col-4"><label for="vin">Vin</label></div>
-                <div class="ui-grid-col-8"><input pInputText id="vin" [(ngModel)]="car.vin" /></div>
-              </div>
-              <div class="ui-grid-row">
-                <div class="ui-grid-col-4"><label for="year">Year</label></div>
-                <div class="ui-grid-col-8"><input pInputText id="year" [(ngModel)]="car.year" /></div>
-              </div>
-              <div class="ui-grid-row">
-                <div class="ui-grid-col-4"><label for="brand">Brand</label></div>
-                <div class="ui-grid-col-8"><input pInputText id="brand" [(ngModel)]="car.brand" /></div>
-              </div>
-              <div class="ui-grid-row">
-                <div class="ui-grid-col-4"><label for="color">Color</label></div>
-                <div class="ui-grid-col-8"><input pInputText id="color" [(ngModel)]="car.color" /></div>
-              </div>
-            </div>
-            <p-footer>
-              <div class="ui-dialog-buttonpane ui-helper-clearfix">
-                <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
-                <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
-              </div>
-            </p-footer>
-          </p-dialog>
+    <p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+      <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="car">
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="vin">Vin</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="vin" [(ngModel)]="car.vin"/></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="year">Year</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="year" [(ngModel)]="car.year"/></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="brand">Brand</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="brand" [(ngModel)]="car.brand"/></div>
+        </div>
+        <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="color">Color</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="color" [(ngModel)]="car.color"/></div>
+        </div>
+      </div>
+      <p-footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+          <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
+          <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+        </div>
+      </p-footer>
+    </p-dialog>
 
-        </pe-step>
+  </pe-step>
+
+  <pe-step label="Shift selection">
+    <div class="subcontent-section">
+      <span>selection is managed by tapping in mobile devices and for other devices metakey or shiftkey are required.</span>
+    </div>
+    <p-dataTable [value]="cars" selectionMode="multiple" [(selection)]="selectedCars" dataKey="vin">
+      <p-header>Multiple Selection</p-header>
+      <p-column field="vin" header="Vin"></p-column>
+      <p-column field="year" header="Year"></p-column>
+      <p-column field="brand" header="Brand"></p-column>
+      <p-column field="color" header="Color"></p-column>
+      <p-footer>
+        <ul>
+          <li *ngFor="let car of selectedCars" style="text-align: left">{{car.vin + ' - ' + car.brand + ' - ' + car.year + ' - ' + car.color}}</li>
+        </ul>
+      </p-footer>
+    </p-dataTable>
+  </pe-step>
 
 
-    </pe-steps>
+</pe-steps>
 
 <p-growl [value]="msgs"></p-growl>

@@ -40,14 +40,16 @@ export class AppComponent implements OnInit{
           {label: 'MenuBar', icon: 'fa-refresh', routerLink: ['/menubar']},
           {label: 'MegaMenu', icon: 'fa-refresh', routerLink: ['/megamenu']},
           {label: 'Spinner', icon: 'fa-refresh', routerLink: ['/spinner']},
-          {label: 'DataTable', icon: 'fa-refresh', routerLink: ['/datatable']}
+          {label: 'DataTable', icon: 'fa-refresh', routerLink: ['/datatable']},
+          {label: 'InputMask', icon: 'fa-refresh', routerLink: ['/inputmask']}
         ]
       },
       {
         label: 'Defect fixes',
         items: [
           {label: 'RC1', icon: 'fa-refresh', url: "https://github.com/primefaces/primeng/releases/tag/4.1.0-rc.1"},
-          {label: 'RC3', icon: 'fa-refresh', url: "https://www.primefaces.org/primeng-4-1-0-rc3-released/"}
+          {label: 'RC3', icon: 'fa-refresh', url: "https://www.primefaces.org/primeng-4-1-0-rc3-released/"},
+          {label: 'Final', icon: 'fa-refresh', url: "https://www.primefaces.org/primeng-4-1-0-released-manhattan/"}
         ]
       },
       {
